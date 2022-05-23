@@ -4,24 +4,27 @@
 
 import tweepy
 import random
-
-api_key = "X"
-api_key_secret = "X"
-access_token = "X"
-access_token_secret = "X"
+api_key = "x"
+api_key_secret = "x"
+bearer_token = "x"
+access_token = "x"
+access_token_secret = "x"
 
 auth = tweepy.OAuthHandler(api_key, api_key_secret)
 auth.set_access_token(access_token, access_token_secret)
-
+topics = ["pasta", "dota2", "computers", "star wars", "elden ring", "python"]
 api = tweepy.API(auth)
-topics = ["dota2", "thechase", "starwars", "computers", "eldenring", "pasta"]
-topic = random.choice(topics)
 
-tweets = api.search_tweets(q=f"{topic}", count=10, lang="en")
+topic = random.choice(topics)
+emptylist = []
+tweets = api.search_tweets(q=f"{topic}", count=100, lang="en")
+for tweets in tweets:
+    tweet = tweets.text
+    username = tweets.user.name
+    emptylist.append("@" + username + " " + tweet)
 
 def writetofile(text):
-    f = open("untitled.txt", "w")
-    f.write("\n")
+    f = open("untitled.py", "w")
     f.write(f"{text}")
-    f.write("\n")
-writetofile([tweet.text for tweet in tweets])
+
+
