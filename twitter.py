@@ -12,9 +12,9 @@ access_token_secret = "x"
 
 auth = tweepy.OAuthHandler(api_key, api_key_secret)
 auth.set_access_token(access_token, access_token_secret)
-topics = ["pasta", "dota2", "computers", "star wars", "elden ring", "python"]
 api = tweepy.API(auth)
 
+topics = ["pasta", "dota2", "computers", "star wars", "elden ring", "python"]
 topic = random.choice(topics)
 emptylist = []
 tweets = api.search_tweets(q=f"{topic}", count=100, lang="en")
