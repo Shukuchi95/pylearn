@@ -1,4 +1,4 @@
-#this is a twitter bot that gets tweets about a random topic and puts them into a file. results stored on my website at 51.75.162.248/untitled.py
+#this is a twitter bot that gets tweets about a random topic and puts them into a file. results stored on my website at https://shukuchi.co.uk/untitled.html
 #results are updated hourly via a cron job 
 #i'm using tweepy to talk to the twitter API
 
