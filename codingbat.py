@@ -1037,6 +1037,21 @@ Return the sum of the numbers in the array,
 except ignore sections of numbers starting with a 6 and extending to the next 7 (every 6 will be followed by at least one 7). 
 Return 0 for no numbers.
 '''
+def sum67(nums):
+    total = 0
+    counting = True
+    for i in nums:
+        if i == 6:
+            counting = False
+        if i == 7 and counting == False:
+            counting = True
+            total += -7
+        if counting == True:
+            total += i
+        if counting == False:
+            total += 0
+    return total
+
 
 #has22
 '''
